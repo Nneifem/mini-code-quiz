@@ -1,0 +1,15 @@
+.top-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.quiz-overview {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.quiz-overview p {
+    padding: 15px;
+}
