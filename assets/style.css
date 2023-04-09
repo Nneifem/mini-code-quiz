@@ -8,8 +8,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding: 30px;
 }
 
 .quiz-overview p {
     padding: 15px;
+}
+
+#start {
+    padding: 5px;
 }
