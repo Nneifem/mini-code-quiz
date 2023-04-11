@@ -19,11 +19,16 @@
     </nav>
 
     <main>
-        <header id="quiz-overview">
+        <header class="quiz-overview" id="quiz-landing"> 
             <h1>Coding Quiz Challenge</h1>
             <p>Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
             <button id="start">Start Quiz</button>
-        </header>    
+        </header>
+
+        <section id="question-container">
+            <h2 id="js-question-text"></h2>
+            <ul id="js-question-choices"></ul>
+        </section>
     </main>
     <script src="./script.js"></script>
 </body>
