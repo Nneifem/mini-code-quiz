@@ -20,8 +20,27 @@ var questionsWithChoices = [
         question: "What defines a class and what defines a id",
         answers: ["class: # , id: .", "class: . , id: +", "class () , id: #", "class: . , id: #"],
         correctAnswer: "class: . , id: #"
+    },
+
+    {
+        question: "What type of values does arrays NOT hold?",
+        answers: ["booleans", "strings", "number", "functions"],
+        correctAnswer: "functions"
+    },
+
+    {
+        question: "What makes your webpage interative?",
+        answers: ["JavaScript", "HTML", "CSS", "Prompts"],
+        correctAnswer: "JavaScript"
+    },
+
+    {
+        question: "What does display block do?",
+        answers: ["Doesn't start a new line", "Always starts a new line", "Doesn't display element", "Starts from the right side of page"],
+        correctAnswer: "Always starts a new line"
     }
 ]
+
 var currentQuestionIndex = 0;
 var theRightAnswer = questionsWithChoices[currentQuestionIndex].correctAnswer;
 
@@ -37,36 +56,24 @@ startButton.addEventListener("click", function(){
     for (var i = 0; i < questionsWithChoices[currentQuestionIndex].answers.length; i++){
         var currentAnswer = questionsWithChoices[currentQuestionIndex].answers[i];
         var newButton =  document.createElement("button");
-        newButton.setAttribute("id", "button" + i)
+        newButton.setAttribute("id", "button" + i);
         newButton.textContent = currentAnswer;
 
-        answersList.append(newButton)
+        answersList.append(newButton);
     }
 
-    var buttonOne = document.querySelector("#button0");
-    buttonOne.addEventListener("click", function(){
-        // console.log(buttonOne.textContent);
-        checkAnswer(questionsWithChoices[currentQuestionIndex], buttonOne.textContent)
-    })
-
-    var buttonTwo = document.querySelector("#button1");
-    buttonTwo.addEventListener("click", function(){
-        console.log(buttonTwo.textContent);
-        checkAnswer(questionsWithChoices[currentQuestionIndex], buttonTwo.textContent)
-    
-    })
     landingPage.classList.add("hide");
 
     var buttonThree = document.querySelector("#button2");
     buttonThree.addEventListener("click", function(){
-        console.log(buttonThree.textContent);
+        userAnswer = buttonThree.textContent;
         checkAnswer(questionsWithChoices[currentQuestionIndex], buttonThree.textContent)
     
     })
 
     var buttonFour = document.querySelector("#button3");
     buttonFour.addEventListener("click", function(){
-        console.log(buttonFour.textContent);
+        userAnswer = buttonFour.textContent;
         checkAnswer(questionsWithChoices[currentQuestionIndex], buttonFour.textContent)
     })
 })
@@ -86,5 +93,6 @@ function checkAnswer(theRightAnswer,userAnswer){
 
     }
 }
-currentQuestionIndex++;
-checkAnswer(theRightAnswer,userAnswer);
+// currentQuestionIndex++;
+// checkAnswer(theRightAnswer,userAnswer);
+// clearInterval(timeInterval);
