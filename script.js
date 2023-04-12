@@ -5,6 +5,9 @@ var answersList = document.querySelector("#js-question-choices");
 var startButton = document.querySelector("#start");
 var rightAnswerEl = document.querySelector("#right");
 var wrongAnswerEl = document.querySelector("#wrong");
+var timerEl = document.querySelector(".timer");
+var time = 100;
+var timeInterval = 0;
 
 var questionsWithChoices = [
     {
@@ -22,9 +25,14 @@ var questionsWithChoices = [
 var currentQuestionIndex = 0;
 var theRightAnswer = questionsWithChoices[currentQuestionIndex].correctAnswer;
 
-
 startButton.addEventListener("click", function(){
-    function theQuestions(){  
+    timerEl.textContent = "Time: " + time;
+
+    timerInterval = setInterval( function(){
+    time--;
+    timerEl.textContent = "Time: " + time;
+    }, 1000)
+
     questionTextEl.textContent = questionsWithChoices[currentQuestionIndex].question;
     for (var i = 0; i < questionsWithChoices[currentQuestionIndex].answers.length; i++){
         var currentAnswer = questionsWithChoices[currentQuestionIndex].answers[i];
@@ -34,10 +42,10 @@ startButton.addEventListener("click", function(){
 
         answersList.append(newButton)
     }
-}
+
     var buttonOne = document.querySelector("#button0");
     buttonOne.addEventListener("click", function(){
-        console.log(buttonOne.textContent);
+        // console.log(buttonOne.textContent);
         checkAnswer(questionsWithChoices[currentQuestionIndex], buttonOne.textContent)
     })
 
@@ -65,19 +73,18 @@ startButton.addEventListener("click", function(){
 
 function checkAnswer(theRightAnswer,userAnswer){
     if(userAnswer == theRightAnswer.correctAnswer){
-        console.log("right")
+        rightAnswerEl.textContent = "right!";
     }
     else{
-        console.log("wrong")
+        wrongAnswerEl.textContent = "wrong!";
+        timerEl.textContent = "Time: " + time;
+
+        timerInterval = setInterval( function(){
+        time = time - 10;
+        timerEl.textContent = "Time: " + time;
+        }, 1000)
+
     }
 }
 currentQuestionIndex++;
 checkAnswer(theRightAnswer,userAnswer);
-// var buttonOne = document.querySelector("#0");
-// buttonOne.addEventListener("click", function(){
-//     var theRightAnswer = questionsWithChoices[currentQuestionIndex].correctAnswer;
-     
-//     console.log(theRightAnswer);
-//     console.log(buttonOne.textContent);
-
-// })
