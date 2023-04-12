@@ -64,6 +64,20 @@ startButton.addEventListener("click", function(){
 
     landingPage.classList.add("hide");
 
+    var buttonOne = document.querySelector("#button0");
+    buttonOne.addEventListener("click", function(){
+        userAnswer = buttonOne.textContent;
+        checkAnswer(questionsWithChoices[currentQuestionIndex], buttonOne.textContent)
+    
+    })
+    
+    var buttonTwo = document.querySelector("#button1");
+    buttonTwo.addEventListener("click", function(){
+        userAnswer = buttonTwo.textContent;
+        checkAnswer(questionsWithChoices[currentQuestionIndex], buttonTwo.textContent)
+    
+    })
+
     var buttonThree = document.querySelector("#button2");
     buttonThree.addEventListener("click", function(){
         userAnswer = buttonThree.textContent;
@@ -81,18 +95,23 @@ startButton.addEventListener("click", function(){
 function checkAnswer(theRightAnswer,userAnswer){
     if(userAnswer == theRightAnswer.correctAnswer){
         rightAnswerEl.textContent = "right!";
+        nextQuestion();
     }
     else{
         wrongAnswerEl.textContent = "wrong!";
         timerEl.textContent = "Time: " + time;
 
         timerInterval = setInterval( function(){
-        time = time - 10;
+        time= time - 10;
         timerEl.textContent = "Time: " + time;
         }, 1000)
-
+        nextQuestion();
     }
 }
-// currentQuestionIndex++;
-// checkAnswer(theRightAnswer,userAnswer);
-// clearInterval(timeInterval);
+
+function nextQuestion(){
+    currentQuestionIndex++;
+    if(currentQuestionIndex < 5){
+        
+    }
+}
