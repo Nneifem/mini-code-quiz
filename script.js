@@ -5,6 +5,7 @@ var answersList = document.querySelector("#js-question-choices");
 var startButton = document.querySelector("#start");
 var rightAnswerEl = document.querySelector("#right");
 var wrongAnswerEl = document.querySelector("#wrong");
+var scoreEl = document.querySelector(".score-display")
 var timerEl = document.querySelector(".timer");
 var time = 100;
 var timeInterval = 0;
@@ -35,7 +36,7 @@ var questionsWithChoices = [
     },
 
     {
-        question: "What does display block do?",
+        question: "What does display:block do?",
         answers: ["Doesn't start a new line", "Always starts a new line", "Doesn't display element", "Starts from the right side of page"],
         correctAnswer: "Always starts a new line"
     }
@@ -43,6 +44,7 @@ var questionsWithChoices = [
 
 var currentQuestionIndex = 0;
 var theRightAnswer = questionsWithChoices[currentQuestionIndex].correctAnswer;
+scoreEl.classList.add("hide");
 
 startButton.addEventListener("click", function(){
     timerEl.textContent = "Time: " + time;
@@ -63,6 +65,7 @@ startButton.addEventListener("click", function(){
     }
 
     landingPage.classList.add("hide");
+
 
     var buttonOne = document.querySelector("#button0");
     buttonOne.addEventListener("click", function(){
@@ -99,10 +102,11 @@ function checkAnswer(theRightAnswer,userAnswer){
     }
     else{
         wrongAnswerEl.textContent = "wrong!";
-        timerEl.textContent = "Time: " + time;
 
         timerInterval = setInterval( function(){
         time= time - 10;
+        clearInterval(timerInterval);
+        timer --;
         timerEl.textContent = "Time: " + time;
         }, 1000)
         nextQuestion();
@@ -111,7 +115,6 @@ function checkAnswer(theRightAnswer,userAnswer){
 
 function nextQuestion(){
     currentQuestionIndex++;
-    if(currentQuestionIndex < 5){
-        
+    questionTextEl.textContent = questionsWithChoices[currentQuestionIndex].question;
+
     }
-}

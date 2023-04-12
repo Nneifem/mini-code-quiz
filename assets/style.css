@@ -20,18 +20,13 @@
     padding: 5px;
 }
 
+/* ---------------------- score page --------------------- */
+.score-display{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
 .hide {
     display: none;
 }
-
-/* ---------------------- question 1 --------------------- */
-/* #question-1 h1{
-    display: flex;
-    justify-content: center;
-}
-
-#answers-1{
-    display: flex;
-    justify-content: center;
-    padding-right: 150px;
-} */
