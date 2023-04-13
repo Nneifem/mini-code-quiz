@@ -11,35 +11,35 @@
 // var timeInterval = 0;
 
 // var questionsWithChoices = [
-//     {
-//         question: "How are arrays determined?",
-//         answers: ["Parenthesis ()", "Curly Bracket {}", "Bracket []", "None of the above"],
-//         correctAnswer: "Bracket []"
-//     },
+    // {
+    //     question: "How are arrays determined?",
+    //     answers: ["Parenthesis ()", "Curly Bracket {}", "Bracket []", "None of the above"],
+    //     correctAnswer: "Bracket []"
+    // },
 
-//     {
-//         question: "What defines a class and what defines a id?",
-//         answers: ["class: # , id: .", "class: . , id: +", "class () , id: #", "class: . , id: #"],
-//         correctAnswer: "class: . , id: #"
-//     },
+    // {
+    //     question: "What defines a class and what defines a id?",
+    //     answers: ["class: # , id: .", "class: . , id: +", "class () , id: #", "class: . , id: #"],
+    //     correctAnswer: "class: . , id: #"
+    // },
 
-//     {
-//         question: "What type of values does arrays NOT hold?",
-//         answers: ["booleans", "strings", "number", "functions"],
-//         correctAnswer: "functions"
-//     },
+    // {
+    //     question: "What type of values does arrays NOT hold?",
+    //     answers: ["booleans", "strings", "number", "functions"],
+    //     correctAnswer: "functions"
+    // },
 
-//     {
-//         question: "What makes your webpage interative?",
-//         answers: ["JavaScript", "HTML", "CSS", "Prompts"],
-//         correctAnswer: "JavaScript"
-//     },
+    // {
+    //     question: "What makes your webpage interative?",
+    //     answers: ["JavaScript", "HTML", "CSS", "Prompts"],
+    //     correctAnswer: "JavaScript"
+    // },
 
-//     {
-//         question: "What does display:block do?",
-//         answers: ["Doesn't start a new line", "Always starts a new line", "Doesn't display element", "Starts from the right side of page"],
-//         correctAnswer: "Always starts a new line"
-//     }
+    // {
+    //     question: "What does display:block do?",
+    //     answers: ["Doesn't start a new line", "Always starts a new line", "Doesn't display element", "Starts from the right side of page"],
+    //     correctAnswer: "Always starts a new line"
+    // }
 // ]
 
 // var currentQuestionIndex = 0;
