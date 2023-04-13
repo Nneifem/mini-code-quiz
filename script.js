@@ -18,7 +18,7 @@ var questionsWithChoices = [
     },
 
     {
-        question: "What defines a class and what defines a id",
+        question: "What defines a class and what defines a id?",
         answers: ["class: # , id: .", "class: . , id: +", "class () , id: #", "class: . , id: #"],
         correctAnswer: "class: . , id: #"
     },
@@ -46,7 +46,7 @@ var currentQuestionIndex = 0;
 var theRightAnswer = questionsWithChoices[currentQuestionIndex].correctAnswer;
 scoreEl.classList.add("hide");
 
-startButton.addEventListener("click", function(){
+startButton.addEventListener("click", function(event){
     timerEl.textContent = "Time: " + time;
 
     timerInterval = setInterval( function(){
@@ -116,5 +116,4 @@ function checkAnswer(theRightAnswer,userAnswer){
 function nextQuestion(){
     currentQuestionIndex++;
     questionTextEl.textContent = questionsWithChoices[currentQuestionIndex].question;
-
     }
