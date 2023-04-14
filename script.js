@@ -6,8 +6,9 @@ var startButton = document.querySelector("#start");
 var rightAnswerEl = document.querySelector("#right");
 var wrongAnswerEl = document.querySelector("#wrong");
 var scoreEl = document.querySelector(".score-display")
+var displayScore = document.querySelector(".score-value");
 var timerEl = document.querySelector(".timer");
-var time = 100;
+var time = 75;
 var timeInterval = 0;
 
 var questionsWithChoices = [
@@ -46,19 +47,28 @@ var currentQuestionIndex = 0;
 var theRightAnswer = questionsWithChoices[currentQuestionIndex].correctAnswer;
 scoreEl.classList.add("hide");
 
-startButton.addEventListener("click", function(){
+
+function timeQuiz(){
     timerEl.textContent = "Time: " + time;
 
     timerInterval = setInterval( function(){
     time--;
     timerEl.textContent = "Time: " + time;
+    if(time == 0){
+        questionContainer.classList("hide");
+        scoreEl.classList.remove("hide");
+    }
     }, 1000)
+}
 
+startButton.addEventListener("click", function(){
+    timeQuiz();
     questionTextEl.textContent = questionsWithChoices[currentQuestionIndex].question;
     for (var i = 0; i < questionsWithChoices[currentQuestionIndex].answers.length; i++){
         var currentAnswer = questionsWithChoices[currentQuestionIndex].answers[i];
         var newButton =  document.createElement("button");
         newButton.setAttribute("id", "button" + i);
+        newButton.setAttribute("style", "background-color: purple; color: white; display: flex; flex-direction: column; padding: 15px; margin: 9px");
         newButton.textContent = currentAnswer;
 
         answersList.append(newButton);
@@ -124,9 +134,7 @@ function nextQuestion(){
     buttonTwo.textContent = questionsWithChoices[currentQuestionIndex].answers[1];
     buttonThree.textContent = questionsWithChoices[currentQuestionIndex].answers[2];
     buttonFour.textContent = questionsWithChoices[currentQuestionIndex].answers[3];
-    console.log(questionsWithChoices[currentQuestionIndex].answers[0]);
 } 
 
 function endQuiz(){
-    
 }
