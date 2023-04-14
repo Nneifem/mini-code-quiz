@@ -54,9 +54,10 @@ function timeQuiz(){
     timerInterval = setInterval( function(){
     time--;
     timerEl.textContent = "Time: " + time;
-    if(time == 0){
-        questionContainer.classList("hide");
-        scoreEl.classList.remove("hide");
+
+    if(time === 0){
+        clearInterval(timerInterval);
+        endQuiz();
     }
     }, 1000)
 }
@@ -68,7 +69,7 @@ startButton.addEventListener("click", function(){
         var currentAnswer = questionsWithChoices[currentQuestionIndex].answers[i];
         var newButton =  document.createElement("button");
         newButton.setAttribute("id", "button" + i);
-        newButton.setAttribute("style", "background-color: purple; color: white; display: flex; flex-direction: column; padding: 15px; margin: 9px");
+        newButton.setAttribute("style", "background-color: purple; color: white; display: flex; flex-direction: column; padding: 15px; margin: 9px; padding-left: 15px");
         newButton.textContent = currentAnswer;
 
         answersList.append(newButton);
@@ -134,7 +135,13 @@ function nextQuestion(){
     buttonTwo.textContent = questionsWithChoices[currentQuestionIndex].answers[1];
     buttonThree.textContent = questionsWithChoices[currentQuestionIndex].answers[2];
     buttonFour.textContent = questionsWithChoices[currentQuestionIndex].answers[3];
+    if(questionsWithChoices.length === questionsWithChoices.length){
+        endQuiz();
+    }
 } 
 
 function endQuiz(){
+    questionContainer.classList("hide");
+    scoreEl.classList.remove("hide");
+
 }
