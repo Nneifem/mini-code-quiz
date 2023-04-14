@@ -6,6 +6,11 @@ This project was built to make a short coding quiz that's 5 questions long and a
 
 ## Usage
 
+![alt text](assets/images/Screenshot%202023-04-13%20at%2011.28.12%20PM.png)
+![alt text](assets/images/Screenshot%202023-04-13%20at%2011.28.27%20PM.png)
+![alt text](assets/images/Screenshot%202023-04-13%20at%2011.28.44%20PM.png)
+![alt text](assets/images/Screenshot%202023-04-13%20at%2011.28.53%20PM.png)
+
 On the title page, the user can either hit start quiz to begin the quiz or view high score to view the score of previous run through or clear it out. If the user clicks on start quiz a questin will appear along with the avaliable answers. The user will have to click on of them and will either get a right or wrong text displayed and the next question will appear. Once finished the user can save their score by entering their initials and clicking the sumbit button.
 
 
@@ -37,3 +42,6 @@ SOFTWARE.
 ## Link
 
 Here is the link to the repo for the project: https://github.com/Nneifem/mini-code-quiz
+
+
+Here is the link to the website: https://nneifem.github.io/mini-code-quiz/
